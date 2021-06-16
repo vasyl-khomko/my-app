@@ -9,7 +9,7 @@ public class InsertTransactional {
     {
         Connection con = null;
         try {
-            con = ConnectionUtils.getConnection();
+            con = DatabaseUtils.getConnection();
             PreparedStatement groupStatement = con.prepareStatement("INSERT INTO `groups` (name, curator_name) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
             PreparedStatement studentStatement = con.prepareStatement("INSERT INTO `students` (name, birth, group_id) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             PreparedStatement ratingStatement = con.prepareStatement("INSERT INTO `students_ratings` (rating, created_at, student_id) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);

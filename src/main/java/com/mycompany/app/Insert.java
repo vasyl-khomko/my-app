@@ -7,7 +7,11 @@ public class Insert {
 
     public static void main(String[] args) throws SQLException
     {
-        Connection con = ConnectionUtils.getConnection();
+        Connection con = DatabaseUtils.getConnection();
+
+        DatabaseUtils.prepareTables(con, "customers_restrict", "orders_restrict");
+        DatabaseUtils.prepareTables(con, "customers_set_null", "orders_set_null");
+        DatabaseUtils.prepareTables(con, "customers_cascade", "orders_cascade");
 
         PreparedStatement groupStatement = con.prepareStatement("INSERT INTO `groups` (name, curator_name) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
         PreparedStatement studentStatement = con.prepareStatement("INSERT INTO `students` (name, birth, group_id) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);

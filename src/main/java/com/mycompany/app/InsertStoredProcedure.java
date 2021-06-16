@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class InsertStoredProcedure {
 
     public static void main(String[] args) throws SQLException {
-        Connection con = ConnectionUtils.getConnection();
+        Connection con = DatabaseUtils.getConnection();
         PreparedStatement statement = con.prepareCall("{call insertData(?, ?, ?, ?, ?, ?)}");
 
         statement.setString(1, "SP-11");

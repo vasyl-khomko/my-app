@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class Select {
 
     public static void main(String[] args) throws SQLException {
-        Connection con = ConnectionUtils.getConnection();
+        Connection con = DatabaseUtils.getConnection();
 
         PreparedStatement groupStatement = con.prepareStatement("SELECT * FROM `groups`");
         PreparedStatement studentStatement = con.prepareStatement("SELECT * FROM `students`");

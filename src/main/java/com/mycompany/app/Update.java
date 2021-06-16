@@ -7,7 +7,7 @@ public class Update {
 
     public static void main(String[] args) throws SQLException
     {
-        Connection con = ConnectionUtils.getConnection();
+        Connection con = DatabaseUtils.getConnection();
 
         PreparedStatement groupStatement = con.prepareStatement("UPDATE `groups` SET curator_name=? WHERE name=?");
         PreparedStatement studentStatement = con.prepareStatement("UPDATE `students` SET birth=?, gender=? WHERE name=?");

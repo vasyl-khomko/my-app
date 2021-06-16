@@ -7,7 +7,7 @@ public class Delete {
 
     public static void main(String[] args) throws SQLException
     {
-        Connection con = ConnectionUtils.getConnection();
+        Connection con = DatabaseUtils.getConnection();
 
         PreparedStatement groupStatement = con.prepareStatement("DELETE FROM `groups` WHERE name=?");
         PreparedStatement studentStatement = con.prepareStatement("DELETE FROM `students` WHERE name=?");
